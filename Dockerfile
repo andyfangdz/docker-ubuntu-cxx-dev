@@ -45,4 +45,4 @@ RUN useradd -m ${CONTAINER_USER} && \
     echo "${CONTAINER_USER}  ALL=(root) ALL" >> /etc/sudoers
 # Make bash the default shell (useful for when using tmux in the container)
 RUN chsh --shell /bin/zsh ${CONTAINER_USER}
-USER ${CONTAINER_USER}
+
