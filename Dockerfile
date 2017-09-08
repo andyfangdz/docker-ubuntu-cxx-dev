@@ -1,6 +1,5 @@
 FROM ubuntu:16.04
 MAINTAINER Dezhi Fang <andyfang.dz@gmail.com>
-ENV LLVM_VERSION=5.0
 ENV CONTAINER_USER="andy"
 
 ENV LANG=en_US.UTF-8 \
@@ -13,7 +12,6 @@ RUN apt-get -y --no-install-recommends install \
   aptitude \
   bash-completion \
   build-essential \
-  clang-${LLVM_VERSION} \
   cmake \
   cmake-curses-gui \
   coreutils \
