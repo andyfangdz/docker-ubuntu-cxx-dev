@@ -3,9 +3,6 @@ MAINTAINER Dezhi Fang <andyfang.dz@gmail.com>
 ENV LLVM_VERSION=5.0
 ENV CONTAINER_USER="andy"
 
-# Set Locale otherwise some applications may behave strangely when
-# the encoding looks like ANSI_X3.4-1968
-RUN locale-gen en_US.UTF-8
 ENV LANG=en_US.UTF-8 \
     LANGUAGE=en_US:en \
     LC_ALL=en_US.UTF-8
