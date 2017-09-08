@@ -31,6 +31,3 @@ RUN sudo apt-get -y install \
   vim \
   zsh \
   sudo
-  
-# Make bash the default shell (useful for when using tmux in the container)
-RUN chsh --shell /bin/zsh ${CONTAINER_USER}
