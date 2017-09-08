@@ -7,10 +7,7 @@ ENV LANG=en_US.UTF-8 \
     LANGUAGE=en_US:en \
     LC_ALL=en_US.UTF-8
 
-RUN apt-get update && apt-get -y upgrade && apt-get -y install wget
-RUN wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add - && \
-	echo "deb http://llvm.org/apt/trusty/ llvm-toolchain-trusty-${LLVM_VERSION} main" >> /etc/apt/sources.list.d/llvm.list && \
-	apt-get update
+RUN apt-get update && apt-get -y upgrade
 
 RUN apt-get -y --no-install-recommends install \
   aptitude \
@@ -38,7 +35,8 @@ RUN apt-get -y --no-install-recommends install \
   tree \
   unzip \
   vim \
-  zsh
+  zsh \
+  sudo
 
 
 # Add non-root user for container but give it sudo access.
