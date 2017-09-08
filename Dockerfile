@@ -1,14 +1,14 @@
-FROM ubuntu:14.04
-MAINTAINER Dan Liew <daniel.liew@imperial.ac.uk>
-ENV LLVM_VERSION=4.0
-ENV CONTAINER_USER="cxxdev"
+FROM ubuntu:16.04
+MAINTAINER Dezhi Fang <andyfang.dz@gmail.com>
+ENV LLVM_VERSION=5.0
+ENV CONTAINER_USER="andy"
 
 # Set Locale otherwise some applications may behave strangely when
 # the encoding looks like ANSI_X3.4-1968
-RUN locale-gen en_GB.UTF-8
-ENV LANG=en_GB.UTF-8 \
-    LANGUAGE=en_GB:en \
-    LC_ALL=en_GB.UTF-8
+RUN locale-gen en_US.UTF-8
+ENV LANG=en_US.UTF-8 \
+    LANGUAGE=en_US:en \
+    LC_ALL=en_US.UTF-8
 
 RUN apt-get update && apt-get -y upgrade && apt-get -y install wget
 RUN wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add - && \
@@ -40,7 +40,8 @@ RUN apt-get -y --no-install-recommends install \
   tmux \
   tree \
   unzip \
-  vim
+  vim \
+  zsh
 
 
 # Add non-root user for container but give it sudo access.
@@ -50,5 +51,5 @@ RUN useradd -m ${CONTAINER_USER} && \
     cp /etc/sudoers /etc/sudoers.bak && \
     echo "${CONTAINER_USER}  ALL=(root) ALL" >> /etc/sudoers
 # Make bash the default shell (useful for when using tmux in the container)
-RUN chsh --shell /bin/bash ${CONTAINER_USER}
+RUN chsh --shell /bin/zsh ${CONTAINER_USER}
 USER ${CONTAINER_USER}
