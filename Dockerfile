@@ -1,6 +1,8 @@
 FROM eclipse/stack-base:ubuntu
 MAINTAINER Dezhi Fang <andyfang.dz@gmail.com>
 
+ENV CONTAINER_USER="user"
+
 RUN sudo apt-get update && sudo apt-get -y upgrade
 
 RUN sudo apt-get -y install \
@@ -29,3 +31,6 @@ RUN sudo apt-get -y install \
   vim \
   zsh \
   sudo
+  
+# Make bash the default shell (useful for when using tmux in the container)
+RUN chsh --shell /bin/zsh ${CONTAINER_USER}
