@@ -1,9 +1,9 @@
 FROM eclipse/stack-base:ubuntu
 MAINTAINER Dezhi Fang <andyfang.dz@gmail.com>
 
-RUN sudo apt-get update && apt-get -y upgrade
+RUN sudo apt-get update && sudo apt-get -y upgrade
 
-RUN sudo apt-get -y --no-install-recommends install \
+RUN sudo apt-get -y install \
   aptitude \
   bash-completion \
   build-essential \
@@ -15,7 +15,6 @@ RUN sudo apt-get -y --no-install-recommends install \
   gdb \
   git-core \
   htop \
-  mercurial \
   ncdu \
   ninja-build \
   python \
