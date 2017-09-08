@@ -2,10 +2,6 @@ FROM ubuntu:16.04
 MAINTAINER Dezhi Fang <andyfang.dz@gmail.com>
 ENV CONTAINER_USER="andy"
 
-ENV LANG=en_US.UTF-8 \
-    LANGUAGE=en_US:en \
-    LC_ALL=en_US.UTF-8
-
 RUN apt-get update && apt-get -y upgrade
 
 RUN apt-get -y --no-install-recommends install \
