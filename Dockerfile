@@ -30,4 +30,5 @@ RUN sudo apt-get -y install \
   unzip \
   vim \
   zsh \
-  sudo
+  sudo \
+  libssl-dev
