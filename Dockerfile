@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM eclipse/stack-base:ubuntu
 MAINTAINER Dezhi Fang <andyfang.dz@gmail.com>
 ENV CONTAINER_USER="andy"
 
