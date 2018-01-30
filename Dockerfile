@@ -35,4 +35,6 @@ RUN sudo apt-get -y install \
   zsh \
   sudo \
   libssl-dev \
-  clang-5.0
+  clang-5.0 && \
+  apt-get -y clean && \
+  rm -rf /var/lib/apt/lists/*
