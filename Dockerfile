@@ -3,7 +3,10 @@ MAINTAINER Dezhi Fang <andyfang.dz@gmail.com>
 
 ENV CONTAINER_USER="user"
 
-RUN sudo apt-get update && sudo apt-get -y upgrade
+RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add - && \
+  sudo apt-add-repository "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-5.0 main" && \
+  sudo apt-get update && \ 
+  sudo apt-get -y upgrade
 
 RUN sudo apt-get -y install \
   aptitude \
@@ -31,4 +34,5 @@ RUN sudo apt-get -y install \
   vim \
   zsh \
   sudo \
-  libssl-dev
+  libssl-dev \
+  clang-5.0
