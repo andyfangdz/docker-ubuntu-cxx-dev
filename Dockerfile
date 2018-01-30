@@ -36,5 +36,5 @@ RUN sudo apt-get -y install \
   sudo \
   libssl-dev \
   clang-5.0 && \
-  apt-get -y clean && \
-  rm -rf /var/lib/apt/lists/*
+  sudo apt-get -y clean && \
+  sudo rm -rf /var/lib/apt/lists/*
